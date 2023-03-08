@@ -1,0 +1,204 @@
+* {
+    box-sizing: border-box;
+}
+
+%transparent {
+    background-color: transparent;
+}
+
+%border-radius-10 {
+    border-radius: 10px;
+}
+
+%border-radius-20 {
+    border-radius: 20px;
+}
+
+%border-none {
+    border: none;
+}
+
+%color-red {
+    color: red;
+}
+
+%cursor-pointer {
+    cursor: pointer;
+}
+
+%display-flex {
+    display: flex;
+}
+
+%float-right {
+    float: right;
+}
+
+%font-size {
+    font-size: 16px;
+}
+
+%padding-5 {
+    padding: 5px;
+}
+
+%text-decoration-none {
+    text-decoration: none;
+}
+
+%align-right {
+    margin-left: auto !important;
+}
+
+body {
+    background: #3c87ff;
+}
+
+nav {
+    @extend %display-flex;
+    justify-content: start;
+}
+
+input {
+    @extend %border-radius-20;
+}
+
+.center-container {
+    @extend %border-radius-20;
+    @extend %padding-5;
+    max-width: 500px;
+    margin: 135px auto;
+    background: #fff;
+
+    * {
+        margin: 5px;
+    }
+}
+
+.modal {
+    @extend %border-radius-20;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: white;
+
+    * {
+        margin: 10px;
+    }
+
+    &-close {
+        @extend %float-right;
+        @extend %text-decoration-none;
+        display: inline-block;
+        scale: 3;
+        transition: all 200ms;
+        font-size: 30px;
+        font-weight: bold;
+
+        &:hover {
+            @extend %color-red;
+        }
+    }
+
+    &-save {
+        &:hover {
+            background-color: limegreen;
+            color: limegreen;
+        }
+    }
+}
+.description {
+    @extend %font-size;
+}
+
+.tasks-box {
+    overflow: auto;
+    max-height: 400px;
+}
+
+.task {
+    &-box {
+        @extend %border-radius-20;
+        display: grid;
+        border: #444 solid;
+    }
+
+    &-home {
+        @extend %border-radius-10;
+        @extend %padding-5;
+        @extend %font-size;
+        background-color: greenyellow;
+    }
+
+    &-work {
+        @extend %border-radius-10;
+        @extend %padding-5;
+        @extend %font-size;
+        background-color: deeppink;
+    }
+
+    &-hobby {
+        @extend %border-radius-10;
+        @extend %padding-5;
+        @extend %font-size;
+        background-color: yellow;
+    }
+}
+
+.nav-link {
+    @extend %text-decoration-none;
+    @extend %cursor-pointer;
+    @extend %font-size;
+    color: #444;
+    text-transform: capitalize;
+    margin: 5px 5px auto;
+
+    &:hover {
+        color: #3c87ff;
+    }
+}
+
+.form-fields {
+    @extend %display-flex;
+}
+
+.delete-button {
+    @extend %cursor-pointer;
+    @extend %float-right;
+    @extend %color-red;
+    @extend %font-size;
+    @extend %transparent;
+    border: none;
+
+    &:hover {
+        @extend %border-radius-20;
+        background-color: rebeccapurple;
+        color: lightseagreen;
+    }
+}
+
+.card-title {
+    @extend %display-flex;
+    @extend %font-size;
+    align-self: center;
+}
+
+.sort-by-date {
+    @extend %transparent;
+    @extend %align-right;
+    border: none;
+}
+
+.addNew-button {
+    @extend %display-flex;
+}
+
+.right {
+    @extend %align-right;
+}
+
+.expiring{
+    color: red;
+}
